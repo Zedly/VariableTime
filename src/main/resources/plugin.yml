@@ -1,6 +1,7 @@
 name: VariableTime
 main: zedly.variabletime.VariableTime
 version: 1.0.0
+api-version: '1.15'
 commands:
   vt:
     description: Allows for access of the /vt command
