@@ -45,9 +45,9 @@ public class VariableTime extends JavaPlugin {
             public void run() {
                 for (World world : Bukkit.getWorlds()) {
                     if (world.getTime() > 12000 && worldTimeNight.containsKey(world)) {
-                        world.setFullTime(world.getFullTime() - 1);
+                        world.setTime(world.getTime() - 1);
                         while (worldTimeNight.get(world) > 1) {
-                            world.setFullTime(world.getFullTime() + 1);
+                            world.setTime(world.getTime() + 1);
                             worldTimeNight.put(world, worldTimeNight.get(world) - 1);
                             if (world.getTime() < 12000) {
                                 worldTimeNight.put(world, 0.0);
@@ -55,9 +55,9 @@ public class VariableTime extends JavaPlugin {
                         }
                         worldTimeNight.put(world, worldSpeedNight.get(world) + worldTimeNight.get(world));
                     } else if (worldTimeDay.containsKey(world)) {
-                        world.setFullTime(world.getFullTime() - 1);
+                        world.setTime(world.getTime() - 1);
                         while (worldTimeDay.get(world) > 1) {
-                            world.setFullTime(world.getFullTime() + 1);
+                            world.setTime(world.getTime() + 1);
                             worldTimeDay.put(world, worldTimeDay.get(world) - 1);
                             if (world.getTime() > 12000) {
                                 worldTimeDay.put(world, 0.0);
